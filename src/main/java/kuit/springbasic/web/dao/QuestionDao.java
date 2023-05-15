@@ -3,10 +3,12 @@ package kuit.springbasic.web.dao;
 import kuit.springbasic.jdbc.JdbcTemplate;
 import kuit.springbasic.jdbc.KeyHolder;
 import kuit.springbasic.web.domain.Question;
+import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository
 public class QuestionDao {
 
     private final JdbcTemplate<Question> jdbcTemplate = new JdbcTemplate<>();
