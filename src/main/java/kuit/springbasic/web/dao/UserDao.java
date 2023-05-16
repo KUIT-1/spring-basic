@@ -2,10 +2,12 @@ package kuit.springbasic.web.dao;
 
 import kuit.springbasic.jdbc.JdbcTemplate;
 import kuit.springbasic.web.domain.User;
+import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository
 public class UserDao {
 
     private final JdbcTemplate<User> jdbcTemplate = new JdbcTemplate<>();
