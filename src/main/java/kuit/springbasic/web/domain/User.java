@@ -1,12 +1,12 @@
 package kuit.springbasic.web.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
+@Setter
 @ToString
 @EqualsAndHashCode(of = {"userId", "password"})
+@NoArgsConstructor
 public class User {
 
     private String userId;
