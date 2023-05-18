@@ -39,8 +39,6 @@ public class LoginController {
 
         User user = userDao.findByUserId(loggedInuser.getUserId());
 
-        log.info(loggedInuser.toString());
-
         if(user!=null && user.equals(loggedInuser)){
             log.info(loggedInuser.toString());
             request.getSession().setAttribute(USER_SESSION_KEY, user);
@@ -50,9 +48,13 @@ public class LoginController {
         return "redirect:/user/loginFailed";
     }
 
-   //@RequestParam("userId") String userId, @RequestParam("password") String password
-    // 변수명과 RequestBody 에 있는 이름이 같다면, 생략 가능 @RequestBody String userId
-    // 인자 타입이 int, Integer, String 등 단순 타입인 경우도 생략 가능 _ 그러나 명시하는 게 너무 없어지기 때문에 비추천
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request){
+        log.info("LoginController.logout");
+
+        request.getSession().removeAttribute("user");
+        return "redirect:/";
+    }
 
 
 }
