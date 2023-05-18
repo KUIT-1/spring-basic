@@ -1,20 +1,29 @@
 package kuit.springbasic.web.controller;
 
+import kuit.springbasic.web.dao.UserDao;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Slf4j
+/*
+    TODO: LogIn, LogOut
+ */
+
 @Controller
-public class ForwardController {
+@Slf4j
+@RequiredArgsConstructor
+public class LogInController {
+    private final UserDao userDao;
+
     @RequestMapping("/user/loginForm")
     public String forwardToUserLoginForm(){
-        log.info("ForwardController.forwardToUserLoginForm");
+        log.info("LogInController.forwardToUserLoginForm");
         return "/user/login";
     }
-    @RequestMapping("user/loginFailed")
+    @RequestMapping("/user/loginFailed")
     public String forwardToUserLoginFailed(){
-        log.info("ForwardController.forwardToUserLoginFailed");
+        log.info("LogInController.forwardToUserLoginFailed");
         return "/user/loginFailed";
     }
 }
