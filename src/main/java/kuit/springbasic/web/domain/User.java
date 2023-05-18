@@ -1,10 +1,9 @@
 package kuit.springbasic.web.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
+@Setter
 @ToString
 @EqualsAndHashCode(of = {"userId", "password"})
 public class User {
@@ -16,6 +15,10 @@ public class User {
     private String name;
 
     private String email;
+
+    public User() {
+
+    }
 
     public User(String userId, String password, String name, String email) {
         this.userId = userId;
