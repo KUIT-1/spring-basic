@@ -7,9 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.awt.desktop.QuitEvent;
 import java.util.List;
 
 @Controller
@@ -18,12 +16,11 @@ import java.util.List;
 public class HomeController {
     private final QuestionDao questionDao;
     @RequestMapping("/")
-    public ModelAndView showHome() {
-        log.info("HomeController.showHome");
-        ModelAndView modelAndView = new ModelAndView("/home");
+    public String showHome(Model model) {
+        log.info("HomeController.showHomeV2");
         List<Question> questions = questionDao.findAll();
-        modelAndView.addObject("questions", questions);
-        return modelAndView;
+        model.addAttribute("questions", questions);
+        return "home";
     }
 
 }
