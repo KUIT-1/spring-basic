@@ -39,15 +39,28 @@ public class HomeController {
 //        this.questionDao = questionDao;
 //    }
 
-    @RequestMapping("/")
-    public ModelAndView showHome(HttpServletRequest request, HttpServletResponse response){
-        log.info("HomeController.showHome");
-        ModelAndView modelAndView = new ModelAndView("/home");
-        List<Question> questions = questionDao.findAll();
-        modelAndView.getModel().put("questions", questions);
-        modelAndView.addObject("questions",questions);
+//    @RequestMapping("/")
+//    public ModelAndView showHomeV1(HttpServletRequest request, HttpServletResponse response){
+//        log.info("HomeController.showHomeV1");
+//        ModelAndView modelAndView = new ModelAndView("/home");
+//        List<Question> questions = questionDao.findAll();
+//        modelAndView.getModel().put("questions", questions);
+//        modelAndView.addObject("questions",questions);
+//
+//        return modelAndView;
+//
+//
+//    }
 
-        return modelAndView;
+
+    @RequestMapping("/")
+    public String showHomeV2(Model model){
+
+        log.info("HomeController.showHomeV2");
+        List<Question> questions = questionDao.findAll();
+        model.addAttribute("questions",questions);
+
+        return "/home";
 
     }
 
