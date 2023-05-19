@@ -43,7 +43,7 @@ public class HomeController {
 //    public ModelAndView showHomeV1(HttpServletRequest request, HttpServletResponse response){
 //        log.info("HomeController.showHomeV1");
 //        ModelAndView modelAndView = new ModelAndView("/home");
-//        List<Question> questions = questionDao.findAll();
+//        List<Question> questions = ques tionDao.findAll();
 //        modelAndView.getModel().put("questions", questions);
 //        modelAndView.addObject("questions",questions);
 //

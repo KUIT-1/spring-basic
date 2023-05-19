@@ -3,6 +3,7 @@
 package kuit.springbasic.web.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import kuit.springbasic.web.dao.UserDao;
 import kuit.springbasic.web.domain.User;
 import lombok.RequiredArgsConstructor;
@@ -59,5 +60,16 @@ public class LoginController {
                 return "redirect:/";
             }
             return "redirect:/user/loginFailed";
+    }
+
+    @RequestMapping("/user/logout")
+    public String logout(HttpServletRequest request) {
+        log.info("LoginController.logout");
+
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        return "redirect:/";
     }
 }
