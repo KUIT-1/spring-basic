@@ -1,5 +1,14 @@
 # spring-basic
 
+<br/>
+
+7️⃣ [7주차 워크북 - 스프링 IoC, DI, MVC](https://fearless-texture-68a.notion.site/Server-7-IoC-DI-MVC-a2b39eaa786b4cd493ad6e3822266a24)
+- spring 전환
+
+<br/>
+
+---
+
 ### main
 
 > 미션 수행 장소
